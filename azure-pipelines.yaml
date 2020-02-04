@@ -1,0 +1,13 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+- task: CmdLine@2
+  displayName: 'Execute Cake Script'
+  inputs:
+    script: |
+      dotnet tool restore
+      dotnet cake
